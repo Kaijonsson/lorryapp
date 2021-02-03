@@ -7,37 +7,55 @@ import SearchBar from "./SearchBar";
 
 function Home() {
  
+
+
+
   return (
-    <div className="App">
+    <>
+      <div>
+        <BackGroundVid className="backgroundVid" />
+      </div>
+          <main style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column',
+              color: 'white',
+              textAlign: 'center',
+              zIndex: 1,
+              minHeight: '100%',
+              minWidth: '100%',
+              position: 'relative',
+              overflowY: 'hidden',
+          }}>
 
+              
 
-      <main>
-      <BackGroundVid className="backgroundVid" />
+            <DropDown />
+            
+            <div style={{
+              height: 150,
+            }}></div>
+            <h1
+              style={{
+                overflow: "hidden",
+                padding: 20,
+              }}
+              id="main-title"
+            >
+              Lorry App
+            </h1>
 
-        <DropDown />
-        
-        <div id="buffer"></div>
-        <h1
-          style={{
-            overflow: "hidden",
-          }}
-          id="main-title"
-        >
-          Lorry App
-        </h1>
+              <SearchBar/>
+              
+              <ButtonGroup style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center',
+              }}/>
+            
 
-          <SearchBar/>
-          
-          <ButtonGroup/>
-        
-        <footer>
-          <ul>
-            <li>On call technician</li>
-            <li>SOS number</li>
-          </ul>
-        </footer>
-      </main>
-    </div>
+          </main>
+    </>
   );
 }
 

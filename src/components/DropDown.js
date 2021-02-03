@@ -12,11 +12,12 @@ function DropDown() {
   
     return (
       <>
-        <Button ref={target} onClick={() => setShow(!show)} className="bg-transparent"  id="reactButton" style={{
-          width: '80%',
+        <Button ref={target} onClick={() => setShow(!show)} className="bg-transparent buttonGroup"  id="reactButton" style={{
           margin: '0 auto',
           color: 'white',
           border: 'none',
+          background: 'rgba(255, 255, 255, 0.5)',
+          marginTop: 20,
         }}>
           Login
         </Button>

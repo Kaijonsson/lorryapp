@@ -11,8 +11,9 @@ function RegisterDropDown() {
         return (
 
           <>
-            <Button ref={target} onClick={() => setShow(!show)} className="bg-transparent"  id="reactButton" style={{
-              width: '80%',
+            <Button ref={target} onClick={() => setShow(!show)} 
+            className="bg-transparent buttonGroup"  
+            style={{
               margin: '0 auto',
               color: 'white',
               border: 'none',

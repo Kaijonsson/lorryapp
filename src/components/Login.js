@@ -20,7 +20,7 @@ function Login() {
         password: password,
       }).then((response) => {
         console.log(response.data);
-  
+
         if(response.data.message) {
           setLoginStatus(response.data.message)
         }else {
@@ -38,23 +38,25 @@ function Login() {
         }}>
 
           <div className="login">
-            <h1 style={{
-              overflow: 'hidden',
-            }}>Login</h1>
+
             <input style={{
+
               color: 'white',
-              background: 'transparent',
+              background: 'rgba(0, 0, 0, 0.5)',
               border: '1px solid #6c757d',
               borderRadius: 5,
+
             }} type="text" placeholder="Username" autoComplete="off"
               onChange={(e) => {
                 setUserName(e.target.value)
               }}/>
             <input style={{
+
               color: 'white',
-              background: 'transparent',
+              background: 'rgba(0, 0, 0, 0.5)',
               border: '1px solid #6c757d',
               borderRadius: 5,
+
             }} type="password" placeholder="Password" autoComplete="off"
               onChange={(e) => {
                 setPassword(e.target.value)
@@ -62,16 +64,19 @@ function Login() {
 
           </div>
 
-          <button style={{
-              backgroundColor: 'transparent',
+          <button className="buttonGroup"
+          style={{
+
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
               border: '1px solid #6c757d',
               borderRadius: 5,
+              
             }} onClick={login}>Login
           </button>
 
-          <h1 style={{
+          <p style={{
                 overflow: 'hidden',
-            }}>{capitalize(loginstatus)}</h1>
+            }}>{capitalize(loginstatus)}</p>
 
           </div>
 

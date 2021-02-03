@@ -25,7 +25,7 @@ function Register() {
 
                 <input style={{
                     color: 'white',
-                    background: 'transparent',
+                    background: 'rgba(0, 0, 0, 0.5)',
                     border: '1px solid #6c757d',
                     borderRadius: 5,
                 }}
@@ -36,7 +36,7 @@ function Register() {
                 />
                 <input style={{
                     color: 'white',
-                    background: 'transparent',
+                    background: 'rgba(0, 0, 0, 0.5)',
                     border: '1px solid #6c757d',
                     borderRadius: 5,
                 }}
@@ -47,8 +47,9 @@ function Register() {
                 />
              </div>
 
-             <button style={{
-                    backgroundColor: 'transparent',
+             <button
+             style={{
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
                     border: '1px solid #6c757d',
                     borderRadius: 5,
                 }}onClick={register}>Register</button>
