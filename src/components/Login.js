@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css';
-import './Login.css';
+import './Home.css';
 
 function Login() {
 
@@ -12,7 +12,7 @@ function Login() {
     const [loginstatus, setLoginStatus] = useState("");
   
 
-  
+    //funktion som skickar inloggningsinfon till backend via node.js
     const login = () => {
       
       Axios.post("http://localhost:3001/login", {
@@ -37,14 +37,21 @@ function Login() {
           textAlign: 'center',
         }}>
 
-          <div className="login">
+          <div className="login"
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+
+                    }}>
 
             <input style={{
 
               color: 'white',
               background: 'rgba(0, 0, 0, 0.5)',
-              border: '1px solid #6c757d',
               borderRadius: 5,
+              border: '1px solid white',
+
 
             }} type="text" placeholder="Username" autoComplete="off"
               onChange={(e) => {
@@ -54,7 +61,7 @@ function Login() {
 
               color: 'white',
               background: 'rgba(0, 0, 0, 0.5)',
-              border: '1px solid #6c757d',
+              border: '1px solid white',
               borderRadius: 5,
 
             }} type="password" placeholder="Password" autoComplete="off"
@@ -63,20 +70,22 @@ function Login() {
               }} />
 
           </div>
-
+              {/* inloggningsknappen */}
           <button className="buttonGroup"
           style={{
-
+              color: 'white',
               backgroundColor: 'rgba(0, 0, 0, 0.5)',
-              border: '1px solid #6c757d',
+              border: '1px solid white',
               borderRadius: 5,
               
             }} onClick={login}>Login
           </button>
 
           <p style={{
+                color: 'white',
                 overflow: 'hidden',
-            }}>{capitalize(loginstatus)}</p>
+            }}>{capitalize(loginstatus)}</p> 
+            {/* här skriver programmet ut svar på inloggningsförsöket */}
 
           </div>
 

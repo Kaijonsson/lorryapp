@@ -19,4 +19,10 @@
     font-size: 22px;
 }
 
+input::placeholder {
+    color: white;
+}
 
+/* Några enstaka css - stilar som jag valde att inte ha inline i övriga koden. Detta för att de gäller 
+för större delar av appen. Eller att det är pseudo-classer. 
+Dessa vet jag inte om man kan ha inline på ett snyggt sätt.*/

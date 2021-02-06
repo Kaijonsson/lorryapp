@@ -5,6 +5,7 @@ import Overlay from 'react-bootstrap/Overlay';
 import Login from './Login';
 import RegisterDropDown from './RegisterDropDown';
 
+//Komponenten som syns högst upp. Knappen Login. trycks den på så aktiveras detta.
 
 function DropDown() {
     const [show, setShow] = useState(false);
@@ -17,9 +18,13 @@ function DropDown() {
           color: 'white',
           border: 'none',
           background: 'rgba(255, 255, 255, 0.5)',
+          boxShadow: '1px 6px 30px 9px rgba(0,0,0,0.30)',
           marginTop: 20,
         }}>
           Login
+
+          {/* Trycker man på knappen Login så kommer Overlay upp och visar två nya komponenter */}
+
         </Button>
         <Overlay target={target.current} show={show} placement="bottom">
           {({ placement, arrowProps, show: _show, popper, ...props }) => (
@@ -38,6 +43,7 @@ function DropDown() {
                 
               }}
             >
+              {/* Två andra komponenter som har separata dokument. */}
               <Login/>
               <RegisterDropDown/>
             </div>

@@ -6,6 +6,9 @@ import Register from './Register';
 
 function RegisterDropDown() {
 
+    // Detta är bara en komponent som utför en viss funktion i appen. Nämligen en
+    // dropdown för registreringen.
+
         const [show, setShow] = useState(false);
         const target = useRef(null);
         return (
@@ -16,7 +19,7 @@ function RegisterDropDown() {
             style={{
               margin: '0 auto',
               color: 'white',
-              border: 'none',
+              border: '1px solid white',
             }}>
               Register
             </Button>

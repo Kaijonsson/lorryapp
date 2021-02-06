@@ -16,8 +16,7 @@ function ButtonGroup() {
       /*------------------------------ -------------------- -------------------------------------------- */
 
 
-
-  useEffect(() => {
+  useEffect(() => { 
     Axios.get("http://localhost:3001/api/get").then((response) => {
       console.log(response);
       setbreaksTable(response.data[0]);
@@ -28,6 +27,8 @@ function ButtonGroup() {
       setAcTable(response.data[5]);
     });
   }, []);
+
+  // Här binds varje index i databasen till en variabel.
   /*------------------------------ GET VEHICLE-AREAS -------------------------------------------- */
       /*------------------------------ -------------------- -------------------------------------------- */
 
@@ -45,12 +46,12 @@ function ButtonGroup() {
     /*------------------------------ BUTTONS/OVERLAYS -------------------------------------------- */
 
 
-  const [show, setShow] = useState(false);
-  const [showCommonIssues, setShowCommonIssues] = useState(false);
+  const [show, setShow] = useState(false); //visar/stänger <overlay> längre ner.
+  const [showCommonIssues, setShowCommonIssues] = useState(false); //visar/stänger <overlay>längre ner.
 
 
-  const target = useRef(null);
-  const targetCommonIssues = useRef(null);
+  const target = useRef(null); //placerar <overlay>
+  const targetCommonIssues = useRef(null); //placerar <overlay>
 
   const [problem, setProblem] = useState("");
   const commonIssues = [
@@ -62,6 +63,16 @@ function ButtonGroup() {
     AcTable,
   ];
 
+  //////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////funktion som gör stor bokstav på första index i en sträng.
+const capitalize = (s) => {
+  if (typeof s !== "string") return "";
+  return s.charAt(0).toUpperCase() + s.slice(1);
+};
+
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////Funktion som skriver ut en knapp per variabel i "commonIssues"
   function renderButtonsGroup(buttonsToRender) {
     const myButtons = buttonsToRender.map((buttonToRender) => {
       return (
@@ -94,10 +105,10 @@ function ButtonGroup() {
         style={{
           overflow: "hidden",
         }}
-        id="secondTitle"
       >
-        Common Issues
+        Lorry App
       </h2>
+      <p>Common Issues</p>
 
       <div
         id="common-issues"
@@ -108,7 +119,6 @@ function ButtonGroup() {
           alignItems: "center",
           color: "white",
           marginTop: 20,
-          marginBottom: 20,
           paddingTop: 20,
           paddingBottom: 20,
         }}
@@ -119,6 +129,7 @@ function ButtonGroup() {
           id="leftBox"
           ref={target}
           style={{
+            border: '1px solid white',
             display: "flex",
             flexDirection: "column",
             color: "white",
@@ -128,7 +139,8 @@ function ButtonGroup() {
         >
           <>
 
-          {renderButtonsGroup(commonIssues)}
+          {renderButtonsGroup(commonIssues)} 
+          {/* Kallar funktionen som skriver ut knappar */}
 
           </>
 
@@ -207,7 +219,7 @@ function ButtonGroup() {
                 display: 'flex',
                 justifyContent: 'center',
                 flexDirection: 'column',
-                color: 'black',
+                color: 'white',
                 textAlign: 'center',
                 padding: 5,
                 background: "rgba(0, 0, 0, 0.5)",
@@ -220,7 +232,7 @@ function ButtonGroup() {
                   margin: '0 auto',
                   color: "white",
                   borderRadius: 5,
-                  border: "none",
+                  border: "1px solid white",
                   background: "rgba(0, 0, 0, 0.5)",
                   width: '50%',
                 }}
@@ -243,10 +255,5 @@ function ButtonGroup() {
 }
 
 
-const capitalize = (s) => {
-  //capitilizes first letter of a string
-  if (typeof s !== "string") return "";
-  return s.charAt(0).toUpperCase() + s.slice(1);
-};
 
 export default ButtonGroup;

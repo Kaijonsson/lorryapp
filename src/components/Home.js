@@ -7,7 +7,8 @@ import SearchBar from "./SearchBar";
 
 function Home() {
  
-
+// GrundAppen visas här. De komponenter som utgör framsidan av appen importeras och 
+// läggs i ordning i HTML-dokumentet nedan
 
 
   return (
@@ -33,17 +34,8 @@ function Home() {
             <DropDown />
             
             <div style={{
-              height: 150,
+              height: 250,
             }}></div>
-            <h1
-              style={{
-                overflow: "hidden",
-                padding: 20,
-              }}
-              id="main-title"
-            >
-              Lorry App
-            </h1>
 
               <SearchBar/>
               
@@ -55,6 +47,15 @@ function Home() {
             
 
           </main>
+          <footer
+          style={{
+            height: 50,
+            backgroundColor: 'grey',
+            zIndex: 1,
+            position: 'relative',
+          }}>
+
+          </footer>
     </>
   );
 }
